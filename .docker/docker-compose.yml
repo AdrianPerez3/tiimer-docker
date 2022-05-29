@@ -11,6 +11,7 @@ services:
             MYSQL_DATABASE: ${MYSQL_DATABASE}
             MYSQL_USER: ${MYSQL_USER}
             MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        restart: always
         ports:
             - 3307:3306
         networks:
@@ -22,6 +23,7 @@ services:
                 TIMEZONE: ${TIMEZONE}
         volumes:
             - ../:/var/www/symfony/
+        restart: always
         networks:
             - symfony
     nginx:
@@ -29,6 +31,7 @@ services:
             context: ./nginx
         volumes:
             - ../:/var/www/symfony/
+        restart: always
         ports:
             - 80:80
         networks:
