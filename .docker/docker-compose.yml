@@ -13,7 +13,7 @@ services:
             MYSQL_PASSWORD: ${MYSQL_PASSWORD}
         restart: always
         ports:
-            - 3307:3306
+            - 3306:3306
         networks:
             - symfony
     php:
