@@ -1,0 +1,23 @@
+{% extends ['base.html.twig', 'menu.html.twig'] %}
+
+{% block title %}Stadistics{% endblock %}
+
+{% block body %}
+
+    {% block menu %}{{include('menu.html.twig')}}{% endblock %}
+
+    <div class=”container-fluid” style="background-color: white">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="w-75">{{ render_chart(chart) }}</div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="w-50">{{ render_chart(donut) }}</div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="w-75">{{ render_chart(barchar) }}</div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

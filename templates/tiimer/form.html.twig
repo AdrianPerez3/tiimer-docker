@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/02b5c565be.js" crossorigin="anonymous"></script>
+    <!-- Custom Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{#    <link rel="stylesheet" href="tiimer/style.css">#}
+{#    <link rel="stylesheet" href="tiimer/popUp.css">#}
+    <link rel="icon" href="stopwatch.svg">
+
+
+    <title id="tiempo">Tiimer</title>
+</head>
+<body>
+{% block menu %}{{include('menu.html.twig')}}{% endblock %}
+
+    <h2 class="d-flex flex-column align-content-center justify-content-center">Tiimer Results</h2>
+    <div id="formulario" class="d-flex flex-column align-content-center justify-content-center">
+        {{ form_start(tiimerForm) }}
+        <label for="startTime">Start Time</label><br>
+        {{ form_widget(tiimerForm.startTime, {'attr':{'class':'workDur p-2 mx-1', 'id':'startTime'}}) }}<br>
+
+        <label for="endTime">End Time</label><br>
+        {{ form_widget(tiimerForm.endTime, {'attr':{'class':'workDur p-2 mx-1', 'id':'endTime'}}) }}<br>
+
+        <label for="date">Date</label><br>
+        {{ form_widget(tiimerForm.date, {'attr':{'class':'workDur p-2 mx-1', 'id':'date'}}) }}<br>
+
+        <label for="description">Work Description</label><br>
+        {{ form_widget(tiimerForm.description, {'attr':{'class':'workDur p-2 mx-1', 'id':'description'}}) }}<br>
+
+        <label for="checked">Work Done</label><br>
+        {{ form_widget(tiimerForm.checked, {'attr':{'class':'workDur p-2 mx-1', 'id':'checked'}}) }}<br>
+
+        <label for="unchecked">Total work</label><br>
+        {{ form_widget(tiimerForm.unchecked, {'attr':{'class':'workDur p-2 mx-1', 'id':'unchecked'}}) }}<br>
+
+        <div class="mt-3">
+            {{ form_widget(tiimerForm.Submit, { 'label': 'Send', 'class':'btn btn-primary'}) }}
+            <button class="btn btn-danger" type="cancel" onclick="window.location='/tiimer';return false;">Cancel</button>
+        </div>
+
+        {{ form_end(tiimerForm) }}
+
+    </div>
+
+<script src="tiimer/timer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.14/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+</html>
